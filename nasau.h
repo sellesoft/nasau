@@ -378,7 +378,7 @@ void update_flags (nasauMachine* machine,u64 r){
 }
 
 void nasau_tick(nasauMachine* machine){
-    u64 instr = mem_read_u64(machine,reg[R_PC].u++ * sizeof(u64));  //get current instruction
+    u64 instr = mem_read_u64(machine,machine->reg[R_PC].u++ * sizeof(u64));  //get current instruction
     InstrRead read = ReadInstr(instr);
 
     switch(read.OP){
